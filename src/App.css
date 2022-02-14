@@ -36,3 +36,82 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom CSS */
+.w-color {
+  color: #fff;
+}
+
+.custom-rounded {
+  border-radius: 5rem !important;
+}
+
+.bp-color {
+  background-color: #25327f;
+}
+
+.y-color {
+  color: #f0e900;
+}
+
+.r-color {
+  color: #da2626;
+}
+
+.p-color {
+  color: #25327f;
+}
+
+.form-check-input:checked {
+  background-color: #25327f;
+  border-color: #25327f;
+}
+
+.hover-bold:hover {
+  font-weight: bold;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.img-hover:hover {
+  opacity: 0.7;
+}
+
+.btn-login {
+  border: 2px solid #25327f;
+  color: #fff;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+/* Horizontal line with text at the center */
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9e9e9e;
+}
+
+.separator::before,
+.separator::after {
+  content: " ";
+  flex: 1;
+  border-bottom: 1px solid #ced4da;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}

@@ -1,9 +1,10 @@
+import "../App.css";
 import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js";
 import { useNavigate } from "react-router-dom";
 
-import { Form, Button, Card } from "react-bootstrap";
+import { Form, Card, Container, Row, Col, Image } from "react-bootstrap";
 
 function Welcome() {
   const [email, setEmail] = useState("");
@@ -37,12 +38,11 @@ function Welcome() {
 
   return (
     <Card style={{ width: "30rem" }} className="m-auto mt-5">
-      <Form className="p-3 auto">
+      <Form className="p-4 auto">
         <Card.Title className="pb-2">Sign in</Card.Title>
         <Form.Group className="mb-2" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
           <Form.Control
-            className="p-2"
+            className="mb-3 p-2 custom-rounded ps-3"
             type="email"
             onChange={handleEmailChange}
             placeholder="Enter email"
@@ -51,9 +51,8 @@ function Welcome() {
         </Form.Group>
 
         <Form.Group className="mb-2" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
           <Form.Control
-            className="p-2"
+            className="mb-3 p-2 custom-rounded ps-3"
             type="password"
             onChange={handlePasswordChange}
             placeholder="Password"
@@ -61,15 +60,56 @@ function Welcome() {
           />
         </Form.Group>
         <Form.Group className="mb-4" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember me" />
+          <Container>
+            <Row>
+              <Col>
+                <Form.Check type="checkbox" label="Remember me" />
+              </Col>
+              <Col className="text-end r-color fs-6 fw-bold c-pointer link">
+                Forgot password
+              </Col>
+            </Row>
+          </Container>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSignIn}>
-          Sign in
-        </Button>
-        <div className="pt-3">or create and account</div>
+        <div className="d-grid gap-2">
+          <button
+            className="btn btn-login custom-rounded bp-color w-color"
+            type="button submit"
+            onClick={handleSignIn}
+          >
+            Sign in
+          </button>
+        </div>
+        <div className="separator pt-5 pb-4">or</div>
+        <Container>
+          <div className="text-center">Sign in with</div>
+          <div className="text-center mt-3">
+            <Image
+              className="me-2 c-pointer img-hover"
+              src="https://img.icons8.com/color/48/000000/facebook-new.png"
+              alt="Facebook"
+            />
+            <Image
+              className="me-2 c-pointer img-hover"
+              src="https://img.icons8.com/color/48/000000/google-logo.png"
+              alt="Google"
+            />
+            <Image
+              className="me-2 c-pointer img-hover"
+              src="https://img.icons8.com/color/48/000000/twitter-circled--v1.png"
+              alt="Twitter..."
+            />
+          </div>
+          <div className="text-center mt-3">
+            don't have an account yet?
+            <span className="ms-4 r-color fw-bold c-pointer link">Sign up</span>
+          </div>
+        </Container>
       </Form>
     </Card>
   );
 }
+
+// <a href="https://icons8.com/icon/CtrV2SV33rD9/facebook-circled">Facebook Circled icon by Icons8</a>
 
 export default Welcome;
