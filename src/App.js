@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Welcome from "./components/Welcome.js";
 import HomePage from "./components/HomePage.js";
+import SignUp from "./components/Signup.js";
 import { Container } from "react-bootstrap";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Welcome />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/home" element={<HomePage />} />
           </Routes>
         </Router>

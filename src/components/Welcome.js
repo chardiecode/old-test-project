@@ -36,12 +36,17 @@ function Welcome() {
       .catch((error) => console.log(error));
   };
 
+  const navigateSignup = () => {
+    navigate("/signup");
+  };
+
   return (
     <Card style={{ width: "30rem" }} className="m-auto mt-5">
       <Form className="p-4 auto">
         <Card.Title className="pb-2">Sign in</Card.Title>
         <Form.Group className="mb-2" controlId="formBasicEmail">
           <Form.Control
+            required={true}
             className="mb-3 p-2 custom-rounded ps-3"
             type="email"
             onChange={handleEmailChange}
@@ -101,8 +106,13 @@ function Welcome() {
             />
           </div>
           <div className="text-center mt-3">
-            don't have an account yet?
-            <span className="ms-4 r-color fw-bold c-pointer link">Sign up</span>
+            Don't have an account yet?
+            <span
+              className="ms-4 r-color fw-bold c-pointer link"
+              onClick={navigateSignup}
+            >
+              Sign up
+            </span>
           </div>
         </Container>
       </Form>

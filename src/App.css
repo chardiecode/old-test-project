@@ -93,6 +93,20 @@
   color: white;
 }
 
+.inline-checkbox {
+  display: inline-block;
+}
+
+.form-select option {
+  padding: 3rem !important;
+  border-radius: 4rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%) !important;
+}
+
 /* Horizontal line with text at the center */
 .separator {
   display: flex;
