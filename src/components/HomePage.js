@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   const navigate = useNavigate();
+  // Just some random changes
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (!user) {
